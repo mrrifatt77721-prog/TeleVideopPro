@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0d14;
+  --card: #141824;
+  --card2: #1b2132;
+  --line: #262d42;
+  --ink: #eef1fa;
+  --mute: #8a93ad;
+  --accent: #7c6cff;
+  --accent2: #38bdf8;
+  color-scheme: dark;
+}
+html.light {
+  --bg: #f3f5fb;
+  --card: #ffffff;
+  --card2: #eef1f8;
+  --line: #dfe4f0;
+  --ink: #12162a;
+  --mute: #66708c;
+  color-scheme: light;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .25s, color .25s;
+  overscroll-behavior-y: none;
+}
+* { box-sizing: border-box; }
+::-webkit-scrollbar { width: 0; height: 0; }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold
+           transition active:scale-[.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary { @apply btn text-white; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .btn-ghost { @apply btn bg-card2 text-ink border border-line; }
+  .btn-danger { @apply btn bg-bad/15 text-bad border border-bad/30; }
+  .input {
+    @apply w-full rounded-xl bg-card2 border border-line px-3.5 py-2.5 text-sm text-ink
+           placeholder:text-mute outline-none transition focus:border-accent;
+  }
+  .label { @apply mb-1 block text-xs font-medium text-mute; }
+  .badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold; }
+  .card { @apply rounded-2xl bg-card border border-line; }
+}

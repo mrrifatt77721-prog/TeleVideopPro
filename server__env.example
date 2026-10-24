@@ -1,0 +1,24 @@
+PORT=4000
+NODE_ENV=development
+MONGO_URI=mongodb://127.0.0.1:27017/televideo
+JWT_SECRET=change-me-to-a-long-random-string
+
+# Admin (change both before going live)
+ADMIN_EMAIL=yhayrifat@gmail.com
+ADMIN_PIN=1234
+
+# Email delivery for OTP codes. If SMTP_HOST is empty, codes are printed
+# to the server console and (outside production) returned as `devCode`.
+SMTP_HOST=
+SMTP_PORT=587
+SMTP_USER=
+SMTP_PASS=
+SMTP_FROM="TeleVideo Pro <no-reply@example.com>"
+
+# Optional: enables real Telegram channel-membership checks for Join tasks
+# and validation of Telegram initData. Bot must be admin in the channels.
+BOT_TOKEN=
+
+# Public URL of this app (used for CORS if client is hosted separately)
+CLIENT_ORIGIN=*
+MAX_UPLOAD_MB=200

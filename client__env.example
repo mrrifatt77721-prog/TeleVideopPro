@@ -1,0 +1,5 @@
+# Only needed when the API is hosted on a different origin than the client
+# VITE_API_URL=https://api.example.com/api
+
+# Your Mini App direct link (BotFather → /newapp), used for share links & deep links
+# VITE_TG_APP_LINK=https://t.me/YourBot/app
